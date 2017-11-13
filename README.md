@@ -27,9 +27,10 @@ It also uses Gulp for running task and TsLint.The seed application is built over
 
 ## Steps to Run
 ```sh
-    npm install          <= install all the npm Dependencies
-    npm run build        <= build and compile the dest folder
-    npm run deploy       <= start the Nodemon and watch for changes.
+    npm install                                         <= install all the npm Dependencies
+    mongod --port 27017 --dbpath "<path dir mongodb>"   <= start the mongodb with cmd from dir mongo   //Example path: "C:\MongoDB\data\db"
+    npm run build                                       <= build and compile the dest folder
+    npm run deploy                                      <= start the Nodemon and watch for changes.
 ```
 
 ## Directory Structure
