@@ -1,9 +1,9 @@
 /**
  * Created by Moiz.Kachwala on 02-06-2016.
  */
-import {Component, OnInit} from '@angular/core';
-import {HeroService} from "../../services/hero.service";
-import {Hero} from "../../models/hero";
+import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
+import { HeroService } from "../../services/hero.service";
+import { Hero } from "../../models/hero";
 import { Router } from '@angular/router';
 
 @Component({
@@ -46,5 +46,21 @@ export class HeroesComponent implements OnInit {
                 if (this.selectedHero === hero) { this.selectedHero = null; }
             })
             .catch(error => this.error = error);
+    }
+}
+
+@Pipe({ name: 'sudentsfilter', pure: false })
+export class SudentsFilterPipe {
+    transform(data: Hero[], search: any): Array<any> {
+        if (!data) {
+            return [];
+        }
+        let newData = data.filter((item) => {
+            return ((item.firstname + "," + item.lastname + "," + item.year + "," + item.department).toLowerCase().indexOf(search) !== -1) || ((item.firstname + "," + item.lastname + "," + item.year + "," + item.department).indexOf(search) !== -1);
+        });
+        if(newData.length === 0) {
+            return data;
+        }
+        return newData;
     }
 }

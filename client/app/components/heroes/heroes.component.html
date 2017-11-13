@@ -6,6 +6,7 @@
         <div class="pull-right">
             <button class="btn btn-success" (click)="addHero()">Add New Student</button>
         </div>
+        <input type="text" class="form-control" id="inputSuccess4" [(ngModel)]="search" placeholder="Search">
     </div>
 </div>
 <div class="row">
@@ -22,10 +23,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let hero of heroes" [class.active]="hero === selectedHero" (click)="onSelect(hero)">
+                <tr *ngFor="let hero of heroes | sudentsfilter:search" [class.active]="hero === selectedHero" (click)="onSelect(hero)">
                     <td>{{hero._id}}</td>
                     <td>{{hero.firstname}}</td>
-                    <td>{{hero.lastName}}</td>
+                    <td>{{hero.lastname}}</td>
                     <td>{{hero.year}}</td>
                     <td>{{hero.department}}</td>
                     <td><button class="btn btn-danger" (click)="deleteHero(hero, $event)">Delete</button></td>
