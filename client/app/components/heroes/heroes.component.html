@@ -13,15 +13,21 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Object Id</th>
-                    <th>Name</th>
-                    <th>Action</th>
+                    <th>Id</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Year of birth</th>
+                    <th>Department</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let hero of heroes" [class.active]="hero === selectedHero" (click)="onSelect(hero)">
                     <td>{{hero._id}}</td>
-                    <td>{{hero.name}}</td>
+                    <td>{{hero.firstname}}</td>
+                    <td>{{hero.lastName}}</td>
+                    <td>{{hero.year}}</td>
+                    <td>{{hero.department}}</td>
                     <td><button class="btn btn-danger" (click)="deleteHero(hero, $event)">Delete</button></td>
                 </tr>
             </tbody>

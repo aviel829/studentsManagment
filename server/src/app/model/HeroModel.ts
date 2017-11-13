@@ -11,16 +11,19 @@ class HeroModel {
     constructor(heroModel: IHeroModel) {
         this._heroModel = heroModel;
     }
-    get name (): string {
-        return this._heroModel.name;
+    get firstname (): string {
+        return this._heroModel.firstname;
+    }
+    get lastname (): string {
+        return this._heroModel.lastname;
     }
 
-    get power (): string {
-        return this._heroModel.power;
+    get department (): string {
+        return this._heroModel.department;
     }
 
-    get amountPeopleSaved (): number {
-        return this._heroModel.amountPeopleSaved;
+    get year (): number {
+        return this._heroModel.year;
     }
     
 }

@@ -12,15 +12,19 @@ class HeroSchema {
 
     static get schema () {
         var schema =  mongoose.Schema({
-            name : {
+            firstname : {
                 type: String,
                 required: true
             },
-            power: {
+            lastname : {
                 type: String,
                 required: true
             },
-            amountPeopleSaved: {
+            department: {
+                type: String,
+                required: true
+            },
+            year: {
                 type: Number,
                 required: true
             }

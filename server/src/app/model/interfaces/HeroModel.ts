@@ -5,9 +5,10 @@
 import mongoose = require("mongoose");
 
 interface HeroModel extends mongoose.Document {
-    power: string;
-    amountPeopleSaved: number;
-    name: string;
+    department: string;
+    year: number;
+    firstname: string;
+    lastname: string;
 }
 
 export = HeroModel;
